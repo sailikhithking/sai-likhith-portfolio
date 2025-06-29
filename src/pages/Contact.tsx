@@ -2,7 +2,10 @@
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Github, Linkedin, Instagram, Mail, MapPin, Send } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Github, Linkedin, Instagram, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const socialLinks = [
@@ -41,7 +44,7 @@ const Contact = () => {
               Get In <span className="gradient-text">Touch</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Let's connect and build something amazing together
+              Let's collaborate, build, and innovate. Don't hesitate to reach out.
             </p>
           </div>
 
@@ -112,6 +115,25 @@ const Contact = () => {
                     </Card>
                   ))}
                 </div>
+                <p className="text-gray-400 mt-4 text-center italic">
+                  "Let's collaborate, build, and innovate. Don't hesitate to reach out."
+                </p>
+              </div>
+
+              {/* Illustration */}
+              <div className="flex justify-center">
+                <div className="w-48 h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-green/20 rounded-2xl flex items-center justify-center border border-white/10">
+                  <div className="relative">
+                    {/* Laptop */}
+                    <div className="w-24 h-16 bg-gray-800 rounded-lg border border-gray-600 relative">
+                      <div className="w-20 h-12 bg-cyber-blue/30 rounded-sm m-2 flex items-center justify-center">
+                        <MessageCircle className="w-6 h-6 text-cyber-blue animate-pulse" />
+                      </div>
+                    </div>
+                    {/* Person silhouette */}
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-b from-gray-700 to-gray-800 rounded-full"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -123,63 +145,63 @@ const Contact = () => {
                   <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">
+                        <Label className="text-gray-300 mb-2 block">
                           First Name
-                        </label>
-                        <input
+                        </Label>
+                        <Input
                           type="text"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-cyber-blue focus:outline-none transition-colors duration-300"
+                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-cyber-blue focus:ring-cyber-blue/20"
                           placeholder="Your first name"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">
+                        <Label className="text-gray-300 mb-2 block">
                           Last Name  
-                        </label>
-                        <input
+                        </Label>
+                        <Input
                           type="text"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-cyber-blue focus:outline-none transition-colors duration-300"
+                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-cyber-blue focus:ring-cyber-blue/20"
                           placeholder="Your last name"
                         />
                       </div>
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <Label className="text-gray-300 mb-2 block">
                         Email
-                      </label>
-                      <input
+                      </Label>
+                      <Input
                         type="email"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-cyber-blue focus:outline-none transition-colors duration-300"
+                        className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-cyber-blue focus:ring-cyber-blue/20"
                         placeholder="your.email@example.com"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <Label className="text-gray-300 mb-2 block">
                         Subject
-                      </label>
-                      <input
+                      </Label>
+                      <Input
                         type="text"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-cyber-blue focus:outline-none transition-colors duration-300"
+                        className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-cyber-blue focus:ring-cyber-blue/20"
                         placeholder="What's this about?"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <Label className="text-gray-300 mb-2 block">
                         Message
-                      </label>
-                      <textarea
+                      </Label>
+                      <Textarea
                         rows={5}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-cyber-blue focus:outline-none transition-colors duration-300 resize-none"
+                        className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-cyber-blue focus:ring-cyber-blue/20 resize-none"
                         placeholder="Tell me about your project or just say hello!"
                       />
                     </div>
                     
                     <Button 
                       type="submit"
-                      className="w-full bg-gradient-to-r from-cyber-blue to-cyber-green hover:from-cyber-green hover:to-cyber-blue text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
+                      className="w-full bg-gradient-to-r from-cyber-blue to-cyber-green hover:from-cyber-green hover:to-cyber-blue text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-blue/50"
                     >
                       <Send size={18} className="mr-2" />
                       Send Message

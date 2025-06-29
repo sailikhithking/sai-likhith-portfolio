@@ -1,7 +1,7 @@
 
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Clock } from 'lucide-react';
+import { ExternalLink, Github, Clock, ShoppingCart, CreditCard, Users, Zap } from 'lucide-react';
 
 const Projects = () => {
   return (
@@ -20,7 +20,7 @@ const Projects = () => {
             </p>
           </div>
 
-          {/* Featured Project */}
+          {/* Featured Project - ShopVerse */}
           <section className="mb-16">
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
               <div className="p-8 md:p-12">
@@ -35,15 +35,44 @@ const Projects = () => {
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  <span className="gradient-text">ShopVerse</span> – The Smart Shopping Platform
+                  <span className="gradient-text">ShopVerse</span> – Modern E-commerce Platform
                 </h2>
                 
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  A modern e-commerce web app using MERN stack, focusing on personalized shopping, cart, checkout, and smart product listings. Built from scratch with attention to user experience and modern web standards.
+                  A modern e-commerce platform built with the MERN stack (MongoDB, Express, React, Node.js). Personalization. Smart checkout. Full-stack powered.
                 </p>
 
+                {/* UI Mockup Placeholder */}
+                <div className="bg-gradient-to-br from-cyber-dark to-black border border-white/10 rounded-xl p-6 mb-6 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyber-blue/10 rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-cyber-green/10 rounded-full blur-3xl"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    
+                    {/* Mock product grid */}
+                    <div className="grid grid-cols-3 gap-2 mb-4">
+                      {[1,2,3,4,5,6].map((i) => (
+                        <div key={i} className="bg-white/5 border border-white/10 rounded p-2 h-16 flex items-center justify-center">
+                          <ShoppingCart size={16} className="text-cyber-blue" />
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Mock cart */}
+                    <div className="bg-cyber-green/20 border border-cyber-green/30 rounded p-3 flex items-center justify-between">
+                      <span className="text-cyber-green text-sm">Shopping Cart</span>
+                      <CreditCard size={16} className="text-cyber-green" />
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['React', 'Node.js', 'MongoDB', 'Express.js', 'JWT', 'Stripe API', 'Responsive Design'].map((tech) => (
+                  {['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT Auth', 'Stripe API', 'Responsive Design'].map((tech) => (
                     <span 
                       key={tech}
                       className="bg-cyber-green/20 border border-cyber-green/30 px-3 py-1 rounded-full text-sm font-medium text-cyber-green"
@@ -54,33 +83,28 @@ const Projects = () => {
                 </div>
 
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-6">
-                  <h3 className="text-xl font-semibold mb-3 text-cyber-blue">Key Features</h3>
-                  <ul className="grid md:grid-cols-2 gap-2 text-gray-300">
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyber-green rounded-full"></span>
-                      User Authentication & Profiles
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyber-green rounded-full"></span>
-                      Smart Product Search
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyber-green rounded-full"></span>
-                      Shopping Cart & Wishlist
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyber-green rounded-full"></span>
-                      Secure Payment Integration
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyber-green rounded-full"></span>
-                      Order Tracking
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cyber-green rounded-full"></span>
-                      Admin Dashboard
-                    </li>
-                  </ul>
+                  <h3 className="text-xl font-semibold mb-4 text-cyber-blue flex items-center gap-2">
+                    <Zap size={20} />
+                    Key Features
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-center gap-3">
+                      <Users size={16} className="text-cyber-blue" />
+                      <span className="text-gray-300">User Authentication & Profiles</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <ShoppingCart size={16} className="text-cyber-green" />
+                      <span className="text-gray-300">Smart Shopping Cart</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CreditCard size={16} className="text-cyber-purple" />
+                      <span className="text-gray-300">Secure Payment Integration</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Zap size={16} className="text-cyber-blue" />
+                      <span className="text-gray-300">Real-time Order Tracking</span>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-cyber-blue/10 to-cyber-green/10 border border-white/20 rounded-xl p-4 mb-6">
