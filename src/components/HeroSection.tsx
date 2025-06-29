@@ -17,8 +17,8 @@ const HeroSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         {/* Cartoon Avatar */}
         <div className="mb-8 flex justify-center">
-          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cyber-blue via-cyber-green to-cyber-purple p-1 animate-glow-pulse">
-            <div className="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center relative overflow-hidden">
+          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cyber-blue via-cyber-green to-cyber-purple p-1 animate-glow-pulse mx-0 my-[20px]">
+            <div className="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center relative overflow-hidden mx-0">
               {/* Cartoon Developer Avatar */}
               <div className="w-40 h-40 bg-gradient-to-b from-gray-700 to-gray-800 rounded-full relative flex items-center justify-center">
                 {/* Hoodie */}
