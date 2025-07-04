@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://sai-likhith-portfolio.vercel.app/sitemap.xml
