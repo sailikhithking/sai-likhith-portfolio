@@ -34,6 +34,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import Confetti from 'react-confetti';
+import emailjs from '@emailjs/browser';
 
 // Form validation schema
 const contactSchema = z.object({
@@ -247,17 +248,60 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission (replace with actual API call)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Option 1: EmailJS Integration (Recommended for quick setup)
+      // You'll need to:
+      // 1. Create account at https://www.emailjs.com/
+      // 2. Create email service and template
+      // 3. Replace these IDs with your actual EmailJS credentials
       
-      // Here you would normally send data to your backend/service
-      console.log('Form data:', data);
+      const emailJSConfig = {
+        serviceId: 'YOUR_SERVICE_ID',     // Replace with your EmailJS service ID
+        templateId: 'YOUR_TEMPLATE_ID',   // Replace with your EmailJS template ID
+        publicKey: 'YOUR_PUBLIC_KEY'      // Replace with your EmailJS public key
+      };
+
+      // Check if EmailJS is configured
+      if (emailJSConfig.serviceId === 'YOUR_SERVICE_ID') {
+        // Fallback: Log to console and show success (for demo purposes)
+        console.log('📧 Contact Form Data:', {
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Simulate email sending for demo
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        toast.success('Demo mode: Message logged to console!');
+        console.log('🎯 To enable real email sending, configure EmailJS credentials in Contact.tsx');
+        
+      } else {
+        // Real EmailJS integration
+        const templateParams = {
+          from_name: `${data.firstName} ${data.lastName}`,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          to_email: 'codewithsailikhith@gmail.com' // Your email
+        };
+
+        await emailjs.send(
+          emailJSConfig.serviceId,
+          emailJSConfig.templateId,
+          templateParams,
+          emailJSConfig.publicKey
+        );
+        
+        toast.success('Message sent successfully!');
+      }
       
       setShowSuccess(true);
       reset();
-      toast.success('Message sent successfully!');
       
     } catch (error) {
+      console.error('Form submission error:', error);
       toast.error('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
